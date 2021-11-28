@@ -1,29 +1,24 @@
 import { Dashboard } from '../components/DashBoard/DashBoard'
+import { fetchWeather } from '../utils';
 
-const Cities = ['Poznań', 'London', 'Havana']
-
-export default function Home(props) {
+export default function Home({ weather }) {
   return (
-    <Dashboard weather={props.weather} />
+    <Dashboard weather={weather} />
   )
 }
 
-const City = () => {
-  for (city of Cities) {
-    currentCity = city;
-  }
-}
-let currentCity = ''
+
+
 
 export async function getStaticProps() {
-
-  const res = await fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=22ff7e60113550c97d4b37724204a051')
-  const weather = await res.json()
-  console.log(weather)
+  const cities = ['Poznan', 'London', 'Havana'];
+  const weatherLondon = await fetchWeather('London');
+  const weatherPoznan = await fetchWeather('Poznan');
+  const weatherHavana = await fetchWeather('Havana');
 
   return {
     props: {
-      weather
+      weather: [weatherLondon, weatherHavana, weatherPoznan]
     },
   }
 }
