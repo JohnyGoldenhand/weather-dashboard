@@ -1,4 +1,4 @@
-import { convertTemperatureToCelsius, getWindDirection, timestampToDate } from "../../utils";
+import { convertTemperatureToCelsius, getWindDirection, timestampToDate, iconConvertion } from "../../utils";
 
 export const Card = (props) => {
     console.log('CARD', props.weather)
