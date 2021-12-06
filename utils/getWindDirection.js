@@ -1,4 +1,5 @@
 export const getWindDirection = (deg) => {
+    console.log(deg)
     if (deg >= 345 && deg <= 30) {
         return 'N'
     } else if (deg > 90 && deg > 30) {
