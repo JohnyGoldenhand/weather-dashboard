@@ -1,7 +1,7 @@
 html,
 body {
   background: #264653;
-  padding: 0;
+  padding: 15px;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -16,10 +16,20 @@ a {
   box-sizing: border-box;
 }
 .styling{
-  color: white;
+  background-color: #b7b7a4;
   font-family: Roboto;
   letter-spacing: 4px;
   padding:10px;
   border-right: 2px;
-}
+  color: #264653;
+  /* opacity: 85%; */
+  height: auto;
+  width: 33%;
+  float: left;
+  text-align: center;
 
+}
+.styling:hover{
+  background-color: #6b705c;
+  color: #caf0f8;
+}

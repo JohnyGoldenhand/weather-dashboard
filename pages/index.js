@@ -11,14 +11,13 @@ export default function Home({ weather }) {
 
 
 export async function getStaticProps() {
-  const cities = ['Poznan', 'London', 'Havana'];
   const weatherLondon = await fetchWeather('London');
   const weatherPoznan = await fetchWeather('Poznan');
   const weatherHavana = await fetchWeather('Havana');
 
   return {
     props: {
-      weather: [weatherLondon, weatherHavana, weatherPoznan]
+      weather: [weatherLondon, weatherPoznan, weatherHavana]
     },
   }
 }
