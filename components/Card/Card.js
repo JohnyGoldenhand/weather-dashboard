@@ -1,4 +1,4 @@
-import { convertTemperatureToCelsius, getWindDirection, timestampToDate, iconConvertion, getLocalTime } from "../../utils";
+import { convertTemperatureToCelsius, getWindDirection, timestampToDate, iconConvertion } from "../../utils";
 
 export const Card = (props) => {
     console.log('CARD', props.weather)
@@ -8,11 +8,12 @@ export const Card = (props) => {
     const celsius = convertTemperatureToCelsius(temp);
     const windDirection = getWindDirection(deg);
 
-    const sunriseTime = timestampToDate(sunrise);
-    const sunsetTime = timestampToDate(sunset)
+    const sunriseTime = timestampToDate(sunrise, timezone);
+    const sunsetTime = timestampToDate(sunset, timezone)
+    const localTime = timestampToDate(dt, timezone)
+
     const convertedIcon = iconConvertion(icon)
 
-    const localTime = getLocalTime(dt, timezone)
 
 
     return (

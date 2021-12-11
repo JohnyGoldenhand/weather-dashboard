@@ -1,10 +1,10 @@
-export const timestampToDate = (timestamp) => {
-    const date = new Date(timestamp * 1000);
-    const hours = date.getHours();
-    const minutes = "0" + date.getMinutes();
-    const seconds = "0" + date.getSeconds();
+import moment from 'moment';
 
-    const formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+export const timestampToDate = (timestamp, offset) => {
+    const formattedTime = moment
+        .utc(timestamp * 1000)
+        .utcOffset(offset / 60)
+        .format('HH:mm');
 
     return formattedTime;
-}
+};
